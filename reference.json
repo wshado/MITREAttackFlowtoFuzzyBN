@@ -1,0 +1,16 @@
+[
+  {"tactic_id": "TA0043", "tactic_name": "Reconnaissance"},
+  {"tactic_id": "TA0042", "tactic_name": "Resource Development"},
+  {"tactic_id": "TA0001", "tactic_name": "Initial Access"},
+  {"tactic_id": "TA0002", "tactic_name": "Execution"},
+  {"tactic_id": "TA0003", "tactic_name": "Persistence"},
+  {"tactic_id": "TA0004", "tactic_name": "Privilege Escalation"},
+  {"tactic_id": "TA0005", "tactic_name": "Defense Evasion"},
+  {"tactic_id": "TA0006", "tactic_name": "Credential Access"},
+  {"tactic_id": "TA0007", "tactic_name": "Discovery"},
+  {"tactic_id": "TA0008", "tactic_name": "Lateral Movement"},
+  {"tactic_id": "TA0009", "tactic_name": "Collection"},
+  {"tactic_id": "TA0011", "tactic_name": "Command and Control"},
+  {"tactic_id": "TA0010", "tactic_name": "Exfiltration"},
+  {"tactic_id": "TA0040", "tactic_name": "Impact"}
+]

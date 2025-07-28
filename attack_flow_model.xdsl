@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was created by ACADEMIC version of SMILE -->
+<smile version="1.0" id="Unnamed" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="attack_action__9ac3cd71_b8e4_4902_a134_5bbf2c3dc9b9">
+			<state id="False" />
+			<state id="True" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__d2a45c19_9a32_40ce_bcc7_a4cd4682e2e4">
+			<state id="False" />
+			<state id="True" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_operator__11263b9e_012f_49d6_b4d3_85894f108b4f">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__9ac3cd71_b8e4_4902_a134_5bbf2c3dc9b9 attack_action__d2a45c19_9a32_40ce_bcc7_a4cd4682e2e4</parents>
+			<probabilities>0 1 1 0 1 0 1 0</probabilities>
+		</cpt>
+		<noisymax id="attack_condition__f5fa9530_9b51_4dd7_9c4f_81a0d54b7313">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>attack_operator__11263b9e_012f_49d6_b4d3_85894f108b4f</parents>
+			<strengths>0 1</strengths>
+			<parameters>0.5 0.5 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<cpt id="attack_action__698fd2b3_f021_4f74_8141_d48ba11ce09c">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_condition__f5fa9530_9b51_4dd7_9c4f_81a0d54b7313</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__371fe05f_e6b1_41ea_84ef_2c76f8186089">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__698fd2b3_f021_4f74_8141_d48ba11ce09c</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<noisymax id="attack_condition__6c666fe2_0a6c_4bb1_8da7_9955f81b187b">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>attack_action__371fe05f_e6b1_41ea_84ef_2c76f8186089</parents>
+			<strengths>0 1</strengths>
+			<parameters>0.5 0.5 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<cpt id="attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_condition__6c666fe2_0a6c_4bb1_8da7_9955f81b187b</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45_div">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__8b0ac8bf_9642_4c25_811c_781942284dac">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45_div</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="attack_action__00173e68_78d0_448d_a71c_5de90b70ed70">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45_div</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="attack_operator__d662af4b_0b28_426f_af26_0e9b79339854">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__8b0ac8bf_9642_4c25_811c_781942284dac attack_action__00173e68_78d0_448d_a71c_5de90b70ed70</parents>
+			<probabilities>0 1 1 0 1 0 1 0</probabilities>
+		</cpt>
+		<cpt id="attack_action__3d2dfd9d_c7a5_40e9_aa7c_5b987d732c86">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_operator__d662af4b_0b28_426f_af26_0e9b79339854</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<noisymax id="attack_condition__aa1e1686_316f_4fe9_b429_c95364d411b3">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>attack_action__3d2dfd9d_c7a5_40e9_aa7c_5b987d732c86</parents>
+			<strengths>0 1</strengths>
+			<parameters>0.5 0.5 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<cpt id="attack_action__b8a0b6a3_554c_4cdc_87c0_03c916e52765">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_condition__aa1e1686_316f_4fe9_b429_c95364d411b3</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<noisymax id="attack_condition__34892151_7072_445f_9312_c105ba550d77">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>attack_action__b8a0b6a3_554c_4cdc_87c0_03c916e52765</parents>
+			<strengths>0 1</strengths>
+			<parameters>0.5 0.5 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<cpt id="attack_action__c4c51349_fb4e_49af_9466_9a926f84f874">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_condition__34892151_7072_445f_9312_c105ba550d77</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab">
+			<state id="False" />
+			<state id="True" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab_div">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__08397107_cda4_4f2b_acc9_db91bf4b4e48">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab_div</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<noisymax id="attack_condition__ec656f5c_4fe9_404f_8d9c_571cf3ebfa0b">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>attack_action__c4c51349_fb4e_49af_9466_9a926f84f874 attack_action__08397107_cda4_4f2b_acc9_db91bf4b4e48</parents>
+			<strengths>0 1 0 1</strengths>
+			<parameters>0.5 0.5 0 1 0.5 0.5 0 1 0.5 0.5</parameters>
+		</noisymax>
+		<cpt id="attack_action__4ee6c3a1_4cbc_437d_80da_c78dd57d063a">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_condition__ec656f5c_4fe9_404f_8d9c_571cf3ebfa0b</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__3473c9f8_ad1c_4984_ad44_fef099578405">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__4ee6c3a1_4cbc_437d_80da_c78dd57d063a</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="infrastructure__60671446_e542_4c46_ac89_12456629cb88">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__3473c9f8_ad1c_4984_ad44_fef099578405</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="infrastructure__2bf42bf8_6ed2_44b0_950c_cadddf754384">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab_div</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="attack_asset__de6fb678_73e8_4861_bde7_b2b76c166f31">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45_div</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="identity__a7ce421b_e112_4070_8236_c6121ed68508">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__698fd2b3_f021_4f74_8141_d48ba11ce09c</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="tool__f40b3d07_9df6_4c81_abe2_d99c05c77f51">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__4ee6c3a1_4cbc_437d_80da_c78dd57d063a</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_asset__6103f692_0ae1_45e8_a3e2_53b702ef0ac0">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__8b0ac8bf_9642_4c25_811c_781942284dac</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__5bc375fd_6c57_48c2_8506_4c74515137b6">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab_div</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="attack_action__1b6f56cd_6a8a_459c_9960_7d8af6e5d7d1">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__5bc375fd_6c57_48c2_8506_4c74515137b6</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="tool__c492196e_a9a7_470f_bec9_113f12f656f7">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__b8a0b6a3_554c_4cdc_87c0_03c916e52765</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_asset__c9305dd0_51f8_4edd_93e9_5a481a25e80b">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__371fe05f_e6b1_41ea_84ef_2c76f8186089</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_action__d87c651b_5316_414c_acd2_ef1ba840a890">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_condition__34892151_7072_445f_9312_c105ba550d77</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="attack_asset__17eefa4c_22c9_4653_902b_1b53e98480e8">
+			<state id="False" />
+			<state id="True" />
+			<parents>attack_action__3d2dfd9d_c7a5_40e9_aa7c_5b987d732c86</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="SMILE_ACADEMIC 2.4.0@070aab1774fd" name="Unnamed">
+			<node id="infrastructure__60671446_e542_4c46_ac89_12456629cb88">
+				<name>NetBIOS Share</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 2770 860 5600</position>
+				<comment>Name: NetBIOS Share\nParents: [&apos;attack-action--3473c9f8-ad1c-4984-ad44-fef099578405&apos;]</comment>
+			</node>
+			<node id="infrastructure__2bf42bf8_6ed2_44b0_950c_cadddf754384">
+				<name>Dump Server</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>530 2930 1180 5920</position>
+				<comment>Name: Dump Server\nParents: [&apos;attack-action--ccd71d3f-2243-4cc0-8e82-382f649073ab&apos;]</comment>
+			</node>
+			<node id="attack_action__00173e68_78d0_448d_a71c_5de90b70ed70">
+				<name>Exploitation for Client Execution</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>50 1170 220 2400</position>
+				<comment>Name: Exploitation for Client Execution\nDescription: Attackers compromised additional servers using software vulnerabilities\nTactic: TA0002\nTechnique: T1203\nParents: [&apos;attack-action--2010cb6c-cca8-45a4-99ca-ed2a2ace8d45&apos;]\nChildren: [&apos;attack-operator--d662af4b-0b28-426f-af26-0e9b79339854&apos;]</comment>
+			</node>
+			<node id="attack_asset__de6fb678_73e8_4861_bde7_b2b76c166f31">
+				<name>Ariba System</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>530 1170 1180 2400</position>
+				<comment>Name: Ariba System\nDescription: used by Fazio employees with AD credentials\nParents: [&apos;attack-action--2010cb6c-cca8-45a4-99ca-ed2a2ace8d45&apos;]</comment>
+			</node>
+			<node id="attack_action__698fd2b3_f021_4f74_8141_d48ba11ce09c">
+				<name>Trusted Relationship</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 530 700 1120</position>
+				<comment>Name: Trusted Relationship\nDescription: Targeted third-party supplier to gain access to Target&apos;s internal systems\nTactic: TA0001\nTechnique: T1199\nParents: [&apos;attack-condition--f5fa9530-9b51-4dd7-9c4f-81a0d54b7313&apos;]\nChildren: [&apos;attack-action--371fe05f-e6b1-41ea-84ef-2c76f8186089&apos;, &apos;identity--a7ce421b-e112-4070-8236-c6121ed68508&apos;]</comment>
+			</node>
+			<node id="attack_action__4ee6c3a1_4cbc_437d_80da_c78dd57d063a">
+				<name>Lateral Tool Transfer</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 2450 700 4960</position>
+				<comment>Name: Lateral Tool Transfer\nDescription: Winxml.dll is sent over a temporary NetBIOS share\nTactic: TA0008\nTechnique: T1570\nParents: [&apos;attack-condition--ec656f5c-4fe9-404f-8d9c-571cf3ebfa0b&apos;]\nChildren: [&apos;attack-action--3473c9f8-ad1c-4984-ad44-fef099578405&apos;, &apos;tool--f40b3d07-9df6-4c81-abe2-d99c05c77f51&apos;]</comment>
+			</node>
+			<node id="attack_action__3d2dfd9d_c7a5_40e9_aa7c_5b987d732c86">
+				<name>Server Software Component</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 1490 700 3040</position>
+				<comment>Name: Server Software Component\nDescription: Attackers compromised additional servers using compromised valid accounts\nTactic: TA0003\nTechnique: T1505\nParents: [&apos;attack-operator--d662af4b-0b28-426f-af26-0e9b79339854&apos;]\nChildren: [&apos;attack-asset--17eefa4c-22c9-4653-902b-1b53e98480e8&apos;, &apos;attack-condition--aa1e1686-316f-4fe9-b429-c95364d411b3&apos;]</comment>
+			</node>
+			<node id="identity__a7ce421b_e112_4070_8236_c6121ed68508">
+				<name>Fazio Mechanical</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 690 860 1440</position>
+				<comment>Name: Fazio Mechanical\nDescription: 3rd party HVAC company that contracted with Target\nParents: [&apos;attack-action--698fd2b3-f021-4f74-8141-d48ba11ce09c&apos;]</comment>
+			</node>
+			<node id="tool__f40b3d07_9df6_4c81_abe2_d99c05c77f51">
+				<name>winxml.dll</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 2610 860 5280</position>
+				<comment>Name: winxml.dll\nParents: [&apos;attack-action--4ee6c3a1-4cbc-437d-80da-c78dd57d063a&apos;]</comment>
+			</node>
+			<node id="attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab">
+				<name>Remote Data Staging</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 2770 540 5600</position>
+				<comment>Name: Remote Data Staging\nDescription: An internal dump server is created to collect POS information from multiple systems via the temporary NetBIOS share\nTactic: TA0009\nTechnique: T1074.002\nParents: [&apos;attack-action--3473c9f8-ad1c-4984-ad44-fef099578405&apos;]\nChildren: [&apos;attack-action--08397107-cda4-4f2b-acc9-db91bf4b4e48&apos;, &apos;attack-action--5bc375fd-6c57-48c2-8506-4c74515137b6&apos;, &apos;infrastructure--2bf42bf8-6ed2-44b0-950c-cadddf754384&apos;]\nRecommendations: Divorce recommended (children: 3)</comment>
+			</node>
+			<node id="attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45">
+				<name>Domain Accounts</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 1010 700 2080</position>
+				<comment>Name: Domain Accounts\nDescription: Attackers compromised AD credentials\nTactic: TA0003\nTechnique: T1078.002\nParents: [&apos;attack-condition--6c666fe2-0a6c-4bb1-8da7-9955f81b187b&apos;]\nChildren: [&apos;attack-asset--de6fb678-73e8-4861-bde7-b2b76c166f31&apos;, &apos;attack-action--00173e68-78d0-448d-a71c-5de90b70ed70&apos;, &apos;attack-action--8b0ac8bf-9642-4c25-811c-781942284dac&apos;]\nRecommendations: Divorce recommended (children: 3)</comment>
+			</node>
+			<node id="attack_condition__34892151_7072_445f_9312_c105ba550d77">
+				<name>attack-condition--34892151-7072-445f-9312-c105ba550d77</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 1970 540 4000</position>
+				<comment>Description: Dropped malware worked successfully on POS systems and RAM scrapping portion began gathering information from card swipes\nParents: [&apos;attack-action--b8a0b6a3-554c-4cdc-87c0-03c916e52765&apos;]\nChildren: [&apos;attack-action--d87c651b-5316-414c-acd2-ef1ba840a890&apos;, &apos;attack-action--c4c51349-fb4e-49af-9466-9a926f84f874&apos;]\nRecommendations: Unknown condition type: UNKNOWN</comment>
+			</node>
+			<node id="attack_asset__6103f692_0ae1_45e8_a3e2_53b702ef0ac0">
+				<name>BMC Software Management System</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 1330 540 2720</position>
+				<comment>Name: BMC Software Management System\nParents: [&apos;attack-action--8b0ac8bf-9642-4c25-811c-781942284dac&apos;]</comment>
+			</node>
+			<node id="attack_action__c4c51349_fb4e_49af_9466_9a926f84f874">
+				<name>Scheduled Transfer</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 2130 540 4320</position>
+				<comment>Name: Scheduled Transfer\nDescription: Every seven hours the Trojan malware checks to see if the local time is between the hours of 10 AM and 5 PM\nTactic: TA0010\nTechnique: T1029\nParents: [&apos;attack-condition--34892151-7072-445f-9312-c105ba550d77&apos;]\nChildren: [&apos;attack-condition--ec656f5c-4fe9-404f-8d9c-571cf3ebfa0b&apos;]</comment>
+			</node>
+			<node id="attack_action__1b6f56cd_6a8a_459c_9960_7d8af6e5d7d1">
+				<name>Exfiltration</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 3090 700 6240</position>
+				<comment>Name: Exfiltration\nDescription: Attackers exfiltrate data from the internal dump server to off-site FTP servers using unknown techniques.\nTactic: TA0010\nParents: [&apos;attack-action--5bc375fd-6c57-48c2-8506-4c74515137b6&apos;]</comment>
+			</node>
+			<node id="attack_action__9ac3cd71_b8e4_4902_a134_5bbf2c3dc9b9">
+				<name>Client Configurations</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 50 540 160</position>
+				<comment>Name: Client Configurations\nDescription: Gathered information on Target network configurations\nTactic: TA0043\nTechnique: T1592.004\nChildren: [&apos;attack-operator--11263b9e-012f-49d6-b4d3-85894f108b4f&apos;]</comment>
+			</node>
+			<node id="attack_operator__11263b9e_012f_49d6_b4d3_85894f108b4f">
+				<name>attack-operator--11263b9e-012f-49d6-b4d3-85894f108b4f</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 210 700 480</position>
+				<comment>Parents: [&apos;attack-action--9ac3cd71-b8e4-4902-a134-5bbf2c3dc9b9&apos;, &apos;attack-action--d2a45c19-9a32-40ce-bcc7-a4cd4682e2e4&apos;]\nChildren: [&apos;attack-condition--f5fa9530-9b51-4dd7-9c4f-81a0d54b7313&apos;]\nRecommendations: Noisy adder logic node (AND) detected</comment>
+			</node>
+			<node id="tool__c492196e_a9a7_470f_bec9_113f12f656f7">
+				<name>BlackPOS malware</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 1970 860 4000</position>
+				<comment>Name: BlackPOS malware\nDescription: tailored version of the malware\nParents: [&apos;attack-action--b8a0b6a3-554c-4cdc-87c0-03c916e52765&apos;]</comment>
+			</node>
+			<node id="attack_condition__f5fa9530_9b51_4dd7_9c4f_81a0d54b7313">
+				<name>attack-condition--f5fa9530-9b51-4dd7-9c4f-81a0d54b7313</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 370 700 800</position>
+				<comment>Description: Identified technical configurations and 3rd party Suppliers\nParents: [&apos;attack-operator--11263b9e-012f-49d6-b4d3-85894f108b4f&apos;]\nChildren: [&apos;attack-action--698fd2b3-f021-4f74-8141-d48ba11ce09c&apos;]\nRecommendations: Unknown condition type: UNKNOWN</comment>
+			</node>
+			<node id="attack_action__371fe05f_e6b1_41ea_84ef_2c76f8186089">
+				<name>Phishing</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 690 540 1440</position>
+				<comment>Name: Phishing\nDescription: phishing attempts toward Fazio employees\nTactic: TA0001\nTechnique: T1566\nParents: [&apos;attack-action--698fd2b3-f021-4f74-8141-d48ba11ce09c&apos;]\nChildren: [&apos;attack-asset--c9305dd0-51f8-4edd-93e9-5a481a25e80b&apos;, &apos;attack-condition--6c666fe2-0a6c-4bb1-8da7-9955f81b187b&apos;]</comment>
+			</node>
+			<node id="attack_action__8b0ac8bf_9642_4c25_811c_781942284dac">
+				<name>Default Accounts</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 1170 860 2400</position>
+				<comment>Name: Default Accounts\nDescription: Attackers may have compromised a default account on the BMC Software Management system to gain further access into Target&apos;s network and move laterally\nTactic: TA0003\nTechnique: T1078.001\nParents: [&apos;attack-action--2010cb6c-cca8-45a4-99ca-ed2a2ace8d45&apos;]\nChildren: [&apos;attack-asset--6103f692-0ae1-45e8-a3e2-53b702ef0ac0&apos;, &apos;attack-operator--d662af4b-0b28-426f-af26-0e9b79339854&apos;]</comment>
+			</node>
+			<node id="attack_asset__c9305dd0_51f8_4edd_93e9_5a481a25e80b">
+				<name>Fazio systems</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 850 540 1760</position>
+				<comment>Name: Fazio systems\nDescription: compromised by attackers\nParents: [&apos;attack-action--371fe05f-e6b1-41ea-84ef-2c76f8186089&apos;]</comment>
+			</node>
+			<node id="attack_action__d87c651b_5316_414c_acd2_ef1ba840a890">
+				<name>Ingress Tool Transfer</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 2130 860 4320</position>
+				<comment>Name: Ingress Tool Transfer\nDescription: Attackers dropped exfiltration malware onto Target&apos;s network\nTactic: TA0011\nTechnique: T1105\nParents: [&apos;attack-condition--34892151-7072-445f-9312-c105ba550d77&apos;]</comment>
+			</node>
+			<node id="attack_condition__ec656f5c_4fe9_404f_8d9c_571cf3ebfa0b">
+				<name>attack-condition--ec656f5c-4fe9-404f-8d9c-571cf3ebfa0b</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 2290 700 4640</position>
+				<comment>Description: The POS local time is between 10 AM and 5 PM\nParents: [&apos;attack-action--c4c51349-fb4e-49af-9466-9a926f84f874&apos;, &apos;attack-action--08397107-cda4-4f2b-acc9-db91bf4b4e48&apos;]\nChildren: [&apos;attack-action--4ee6c3a1-4cbc-437d-80da-c78dd57d063a&apos;]\nRecommendations: Unknown condition type: UNKNOWN</comment>
+			</node>
+			<node id="attack_action__d2a45c19_9a32_40ce_bcc7_a4cd4682e2e4">
+				<name>Search Engines</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 50 860 160</position>
+				<comment>Name: Search Engines\nDescription: Googled information on Target systems for reconnaissance\nTactic: TA0043\nTechnique: T1593.002\nChildren: [&apos;attack-operator--11263b9e-012f-49d6-b4d3-85894f108b4f&apos;]</comment>
+			</node>
+			<node id="attack_action__3473c9f8_ad1c_4984_ad44_fef099578405">
+				<name>LLMNR/NBT-NS Poisoning and SMB Relay</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 2610 540 5280</position>
+				<comment>Name: LLMNR/NBT-NS Poisoning and SMB Relay\nDescription: A temporary NetBIOS share is established to transfer POS data to an internal dump server\nTactic: TA0009\nTechnique: T1557.001\nParents: [&apos;attack-action--4ee6c3a1-4cbc-437d-80da-c78dd57d063a&apos;]\nChildren: [&apos;attack-action--ccd71d3f-2243-4cc0-8e82-382f649073ab&apos;, &apos;infrastructure--60671446-e542-4c46-ac89-12456629cb88&apos;]</comment>
+			</node>
+			<node id="attack_action__5bc375fd_6c57_48c2_8506_4c74515137b6">
+				<name>Non-Application Layer Protocol</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 2930 540 5920</position>
+				<comment>Name: Non-Application Layer Protocol\nDescription: Once data is stored on the internal dump server, an ICMP packet is sent to a remote server (possibly a C2 server) to alert attackers that data is located on the internal dump server and ready for exfiltration\nTactic: TA0011\nTechnique: T1095\nParents: [&apos;attack-action--ccd71d3f-2243-4cc0-8e82-382f649073ab&apos;]\nChildren: [&apos;attack-action--1b6f56cd-6a8a-459c-9960-7d8af6e5d7d1&apos;]</comment>
+			</node>
+			<node id="attack_condition__aa1e1686_316f_4fe9_b429_c95364d411b3">
+				<name>attack-condition--aa1e1686-316f-4fe9-b429-c95364d411b3</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 1650 860 3360</position>
+				<comment>Description: Through moving laterally, attackers discover, target, and test malware on POS systems\nParents: [&apos;attack-action--3d2dfd9d-c7a5-40e9-aa7c-5b987d732c86&apos;]\nChildren: [&apos;attack-action--b8a0b6a3-554c-4cdc-87c0-03c916e52765&apos;]\nRecommendations: Unknown condition type: UNKNOWN</comment>
+			</node>
+			<node id="attack_asset__17eefa4c_22c9_4653_902b_1b53e98480e8">
+				<name>Servers</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 1650 540 3360</position>
+				<comment>Name: Servers\nParents: [&apos;attack-action--3d2dfd9d-c7a5-40e9-aa7c-5b987d732c86&apos;]</comment>
+			</node>
+			<node id="attack_action__b8a0b6a3_554c_4cdc_87c0_03c916e52765">
+				<name>Ingress Tool Transfer</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>290 1810 700 3680</position>
+				<comment>Name: Ingress Tool Transfer\nDescription: Attackers dropped malware to Target&apos;s POS systems\nTactic: TA0011\nTechnique: T1105\nParents: [&apos;attack-condition--aa1e1686-316f-4fe9-b429-c95364d411b3&apos;]\nChildren: [&apos;attack-condition--34892151-7072-445f-9312-c105ba550d77&apos;, &apos;tool--c492196e-a9a7-470f-bec9-113f12f656f7&apos;]</comment>
+			</node>
+			<node id="attack_condition__6c666fe2_0a6c_4bb1_8da7_9955f81b187b">
+				<name>attack-condition--6c666fe2-0a6c-4bb1-8da7-9955f81b187b</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 850 860 1760</position>
+				<comment>Description: Phishing attempts successful\nParents: [&apos;attack-action--371fe05f-e6b1-41ea-84ef-2c76f8186089&apos;]\nChildren: [&apos;attack-action--2010cb6c-cca8-45a4-99ca-ed2a2ace8d45&apos;]\nRecommendations: Unknown condition type: UNKNOWN</comment>
+			</node>
+			<node id="attack_operator__d662af4b_0b28_426f_af26_0e9b79339854">
+				<name>attack-operator--d662af4b-0b28-426f-af26-0e9b79339854</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 1330 860 2720</position>
+				<comment>Parents: [&apos;attack-action--8b0ac8bf-9642-4c25-811c-781942284dac&apos;, &apos;attack-action--00173e68-78d0-448d-a71c-5de90b70ed70&apos;]\nChildren: [&apos;attack-action--3d2dfd9d-c7a5-40e9-aa7c-5b987d732c86&apos;]\nRecommendations: Noisy adder logic node (AND) detected</comment>
+			</node>
+			<node id="attack_action__08397107_cda4_4f2b_acc9_db91bf4b4e48">
+				<name>Defense Evasion</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>50 2930 220 5920</position>
+				<comment>Name: Defense Evasion\nDescription: The trojan malware transfer data to the internal dump server using common ports: 80, 139, and 443.\nTactic: TA0005\nParents: [&apos;attack-action--ccd71d3f-2243-4cc0-8e82-382f649073ab&apos;]\nChildren: [&apos;attack-condition--ec656f5c-4fe9-404f-8d9c-571cf3ebfa0b&apos;]</comment>
+			</node>
+			<node id="attack_action__ccd71d3f_2243_4cc0_8e82_382f649073ab_div">
+				<name>attack-action--ccd71d3f-2243-4cc0-8e82-382f649073ab_div</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>370 2930 860 5920</position>
+				<comment>Divorce of attack-action--ccd71d3f-2243-4cc0-8e82-382f649073ab: splits to [&apos;attack-action--08397107-cda4-4f2b-acc9-db91bf4b4e48&apos;, &apos;attack-action--5bc375fd-6c57-48c2-8506-4c74515137b6&apos;, &apos;infrastructure--2bf42bf8-6ed2-44b0-950c-cadddf754384&apos;]</comment>
+			</node>
+			<node id="attack_action__2010cb6c_cca8_45a4_99ca_ed2a2ace8d45_div">
+				<name>attack-action--2010cb6c-cca8-45a4-99ca-ed2a2ace8d45_div</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="MS Sans Serif" size="8" />
+				<position>210 1170 540 2400</position>
+				<comment>Divorce of attack-action--2010cb6c-cca8-45a4-99ca-ed2a2ace8d45: splits to [&apos;attack-asset--de6fb678-73e8-4861-bde7-b2b76c166f31&apos;, &apos;attack-action--00173e68-78d0-448d-a71c-5de90b70ed70&apos;, &apos;attack-action--8b0ac8bf-9642-4c25-811c-781942284dac&apos;]</comment>
+			</node>
+		</genie>
+	</extensions>
+</smile>

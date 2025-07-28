@@ -1,0 +1,181 @@
+from flask import Flask, request, redirect, url_for, render_template_string
+from prometheus_client import Gauge, generate_latest
+from pysmile import Network
+import pysmile_license   # loads your SMILE license
+import threading
+
+app = Flask(__name__)
+
+# — globals —
+prob_gauges      = {}
+last_values      = {}
+current_evidence = {}
+current_beliefs  = {}
+log_lines        = []
+lock             = threading.Lock()
+
+# — load your BN once —
+net = Network()
+net.read_file("../attack_flow_model.xdsl")  # adjust to your XDSL path
+
+def update_gauges_and_beliefs():
+    """Run inference, update Prometheus gauges, log changes,
+       and capture current_beliefs."""
+    global current_beliefs, log_lines
+
+    net.update_beliefs()
+
+    # clear out old logs & beliefs
+    log_lines.clear()
+    current_beliefs.clear()
+
+    # force every node to look like “first time” so we’ll log each one
+    for nid in list(last_values.keys()):
+        last_values[nid] = None
+
+    with lock:
+        for h in net.get_all_nodes():
+            nid = net.get_node_id(h)
+            try:
+                p = net.get_node_value(h)[1]
+            except Exception:
+                continue
+
+            # register gauge once
+            if nid not in prob_gauges:
+                prob_gauges[nid] = Gauge(f"bn_{nid}", f"P(True) for {nid}")
+                last_values[nid] = None
+
+            old = last_values[nid]
+            if old is None or abs(p - old) > 1e-6:
+                msg = f"📈 {nid}: {old!r} → {p:.4f}"
+                log_lines.append(msg)
+                print(msg)
+                prob_gauges[nid].set(p)
+                last_values[nid] = p
+
+            # always save for the beliefs table
+            current_beliefs[nid] = p
+
+@app.route("/set_evidence", methods=["POST"])
+def set_evidence():
+    """Apply new evidence, run inference & logging, then show results."""
+    global current_evidence
+    ev = {}
+    for h in net.get_all_nodes():
+        nid = net.get_node_id(h)
+        v   = request.form.get(nid, "")
+        if v == "0":
+            ev[nid] = False
+        elif v == "1":
+            ev[nid] = True
+
+    current_evidence = ev
+
+    # apply and infer *once*
+    net.clear_all_evidence()
+    for nid, val in current_evidence.items():
+        try:
+            net.set_evidence(nid, val)
+        except Exception:
+            pass
+
+    update_gauges_and_beliefs()
+    return redirect(url_for("index"))
+
+@app.route("/get_evidence", methods=["POST"])
+def get_evidence():
+    """Just redisplay the already‐computed beliefs (no new logs)."""
+    return redirect(url_for("index"))
+
+@app.route("/metrics")
+def metrics():
+    return generate_latest(), 200, {"Content-Type": "text/plain"}
+
+HTML = """
+<!doctype html>
+<title>Bayes Net Evidence</title>
+<style>
+  body { margin:0; padding:0; display:flex; height:100vh; font-family:sans-serif; }
+  section { flex:1; box-sizing:border-box; padding:1em; overflow:hidden; }
+  #logs    { border-right:1px solid #ccc; }
+  #set     { border-right:1px solid #ccc; overflow:auto; }
+  #beliefs { overflow:auto; }
+
+  h2 { margin-top:0; }
+
+  /* Logs panel */
+  #logs pre {
+    background:#f7f7f7;
+    height:calc(100% - 1.5em);
+    overflow:auto;
+    white-space:pre-wrap;
+    word-break:break-word;
+    margin:0; padding:0.5em;
+  }
+
+  /* Tables */
+  table { border-collapse:collapse; width:100%; font-size:0.9em; }
+  th, td { border:1px solid #ddd; padding:0.3em; text-align:left; }
+  td:first-child { font-family:monospace; }
+  td:nth-child(2) { text-align:right; }
+
+  button { margin-top:0.5em; padding:0.5em 1em; }
+</style>
+<section id="logs">
+  <h2>Logs</h2>
+  <pre>{{ logs|join('\\n') }}</pre>
+<section id="set">
+  <h2>Set Evidence</h2>
+  <form action="{{ url_for('set_evidence') }}" method="post">
+    <table>
+      <tr><th>Node</th><th>Unset</th><th>False (0)</th><th>True (1)</th></tr>
+      {% for nid in nodes %}
+      <tr>
+        <td>{{ nid }}</td>
+        <td><input type="radio" name="{{ nid }}" value=""
+            {% if evidence.get(nid) is none %}checked{% endif %}></td>
+        <td><input type="radio" name="{{ nid }}" value="0"
+            {% if evidence.get(nid) is sameas(false) %}checked{% endif %}></td>
+        <td><input type="radio" name="{{ nid }}" value="1"
+            {% if evidence.get(nid) is sameas(true) %}checked{% endif %}></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <button type="submit">Set Evidence</button>
+  </form>
+</section>
+<section id="beliefs">
+  <h2>Current Beliefs</h2>
+  {% if beliefs %}
+    <table>
+      <tr><th>Node</th><th>P(True)</th></tr>
+      {% for nid, p in beliefs.items() %}
+      <tr>
+        <td>{{ nid }}</td>
+        <td>{{ '%.4f'|format(p) }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p><em>— no beliefs computed yet —</em></p>
+  {% endif %}
+  <form action="{{ url_for('get_evidence') }}" method="post">
+    <button type="submit">Get Evidence</button>
+  </form>
+</section>
+"""
+
+@app.route("/", methods=["GET"])
+def index():
+    nodes = [net.get_node_id(h) for h in net.get_all_nodes()]
+    return render_template_string(
+      HTML,
+      nodes=nodes,
+      evidence=current_evidence,
+      beliefs=current_beliefs,
+      logs=log_lines
+    )
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
