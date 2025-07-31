@@ -314,26 +314,3 @@ python user_interface.py
 ## License
 
 This project requires a PySmile license for Bayesian Network functionality. Configure your license in `bn_creator/pysmile_license.py`.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## Troubleshooting
-
-### Common Issues
-
-**"Unexpected input" errors**: Ensure fuzzy parameters match tactic expectations
-**CPT setting failures**: Check parent node state counts and ordering
-**License errors**: Verify PySmile license configuration
-
-### Debug Mode
-Enable detailed debug output by checking the console during execution. The system provides comprehensive logging for fuzzy calculations, CPT generation, and network building.
-
----
-
-*For more information about MITRE ATT&CK, visit: https://attack.mitre.org/*
