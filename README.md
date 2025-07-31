@@ -1,6 +1,6 @@
 # Fuzzy Bayesian Network Integration for MITRE ATT&CK
 
-A sophisticated system that integrates fuzzy logic with Bayesian Networks to model MITRE ATT&CK tactics and techniques, providing probabilistic assessments of attack success rates based on environmental factors.
+A system that integrates fuzzy logic with Bayesian Networks to model MITRE ATT&CK tactics and techniques, providing probabilistic assessments of attack success rates based on environmental factors.
 
 ![Web Interface](img/web_interface.png)
 *Flask web interface showing Bayesian Network nodes and their probability distributions*
